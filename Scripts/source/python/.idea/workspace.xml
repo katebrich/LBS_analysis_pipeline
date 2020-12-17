@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0abd618a-e9e3-47cc-9a10-f741aa242029" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_allFeatures_withP2RankFeatures_Avg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_allFeatures_withP2RankFeatures_NoAvg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_allFeatures_withoutP2RankFeatures_Avg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_allFeatures_withoutP2RankFeatures_NoAvg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_everyFeature_NoAvg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_every_woP2Rank.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_lbsOnly_NoAvg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_lbsOnly_avg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_noCustom_avg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/p2rank_models_noCustom_noAvg.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pipeline_analysis.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/pythonScripts.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/AnalysisComputer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/DatasetDownloader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/FeaturesComputer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/LigandBindingSitesComputer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/MappingsComputer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/Plots.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/AnalysisPipeline/SASA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/AA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/AA_properties.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/Custom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/Debug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/FASTA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/OtherResources.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/PDB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/PDBeKB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Features/UniProt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/MOAD.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/conservation_changed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/convert_conservation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/create_filtered_datasets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/dataset_remove_duplicates.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/filter_singlechain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/fix_conservation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/plot_pValue_deflation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/Utils/prank_dataset_get_chains.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/analysis_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/create_p2rank_custom_feature_files.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/create_p2rank_ds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/helper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/moad.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/run.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/AnalysisComputerOld.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/DynaMine/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/DynaMine/config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/DynaMine/predictor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/DynaMine/submit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/PDB_Parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/T_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/compute_SASA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/correct_mmcif.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/create_p2rank_custom_feature_files_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/create_prank_ds.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/fischers_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/run_dynamine.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pipeline/pythonScripts/unused/statistical_analysis.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1c7SkhP9FJ9hLUcuVVPPmsdImKq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/unused" />
+      <recent name="$PROJECT_DIR$/AnalysisPipeline" />
+      <recent name="$PROJECT_DIR$/Utils" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.analysis_pipeline">
+    <configuration name="analysis_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PipelineAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/diplomka_2/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/analysis_pipeline.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create_p2rank_ds" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PipelineAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_p2rank_ds.py" />
+      <option name="PARAMETERS" value="-p $PROJECT_DIR$/../../P2Rank/datasets/chen11_filter_MOAD/PDB -o $PROJECT_DIR$/../../P2Rank/datasets/chen11_filter_MOAD.ds -l -d $PROJECT_DIR$/../datasets/chen11_filter_MOAD.txt" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dataset_remove_duplicates" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PipelineAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/dataset_remove_duplicates.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fix_conservation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PipelineAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/fix_conservation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_pValue_deflation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PipelineAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/plot_pValue_deflation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.analysis_pipeline" />
+      <item itemvalue="Python.create_p2rank_ds" />
+      <item itemvalue="Python.dataset_remove_duplicates" />
+      <item itemvalue="Python.fix_conservation" />
+      <item itemvalue="Python.plot_pValue_deflation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.analysis_pipeline" />
+        <item itemvalue="Python.plot_pValue_deflation" />
+        <item itemvalue="Python.fix_conservation" />
+        <item itemvalue="Python.create_p2rank_ds" />
+        <item itemvalue="Python.dataset_remove_duplicates" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0abd618a-e9e3-47cc-9a10-f741aa242029" name="Default Changelist" comment="" />
+      <created>1589878282660</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589878282660</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="625" y="235" width="732" height="644" key="#Inspections" timestamp="1603442587687">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="625" y="235" width="732" height="644" key="#Inspections/72.27.1848.1053@72.27.1848.1053" timestamp="1603442587687" />
+    <state x="1851" y="378" width="2067" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606739429130">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2835" y="542" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605102524805" />
+    <state x="1851" y="378" width="2067" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606739429130" />
+    <state x="339" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1604961295299" />
+    <state x="1139" y="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1603874316762" />
+    <state x="985" y="242" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.4168.1413@72.27.4168.1413" timestamp="1598355267003" />
+    <state x="1148" y="625" width="325" height="224" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1604231760569">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state x="1148" y="625" width="325" height="224" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604231760569" />
+    <state x="658" y="144" width="666" height="826" key="#run_analysis" timestamp="1598174054360">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="658" y="144" width="666" height="826" key="#run_analysis/72.27.1848.1053@72.27.1848.1053" timestamp="1598174054360" />
+    <state width="2486" height="645" key="DebuggerActiveHint" timestamp="1604159212931">
+      <screen x="72" y="27" width="2488" height="1413" />
+    </state>
+    <state width="2486" height="645" key="DebuggerActiveHint/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604159212931" />
+    <state x="137" y="99" width="1539" height="879" key="DiffContextDialog" timestamp="1606042921768">
+      <screen x="72" y="27" width="1608" height="1023" />
+    </state>
+    <state x="1783" y="102" width="2450" height="1237" key="DiffContextDialog/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605270406227" />
+    <state x="137" y="99" width="1539" height="879" key="DiffContextDialog/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606042921768" />
+    <state x="172" y="127" width="2288" height="1213" key="DiffContextDialog/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604940041765" />
+    <state x="2737" y="467" width="658" height="520" key="FileChooserDialogImpl" timestamp="1606740772711">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2737" y="467" width="658" height="520" key="FileChooserDialogImpl/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606740772711" />
+    <state width="2537" height="340" key="GridCell.Tab.0.bottom" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1825" height="268" key="GridCell.Tab.0.bottom/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605535912077" />
+    <state width="1657" height="268" key="GridCell.Tab.0.bottom/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605525553532" />
+    <state width="1201" height="444" key="GridCell.Tab.0.bottom/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="217" key="GridCell.Tab.0.bottom/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320737" />
+    <state width="2537" height="340" key="GridCell.Tab.0.bottom/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="216" key="GridCell.Tab.0.bottom/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606687177774" />
+    <state width="1825" height="489" key="GridCell.Tab.0.bottom/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851843546" />
+    <state width="1825" height="401" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1605484314278" />
+    <state width="1657" height="479" key="GridCell.Tab.0.bottom/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.0.bottom/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="679" key="GridCell.Tab.0.bottom/72.27.2488.1413@72.27.2488.1413" timestamp="1604660267936" />
+    <state width="2465" height="392" key="GridCell.Tab.0.bottom/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757189" />
+    <state width="2537" height="340" key="GridCell.Tab.0.center" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1825" height="268" key="GridCell.Tab.0.center/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605535912077" />
+    <state width="1657" height="268" key="GridCell.Tab.0.center/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605525553532" />
+    <state width="1201" height="444" key="GridCell.Tab.0.center/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="217" key="GridCell.Tab.0.center/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320737" />
+    <state width="2537" height="340" key="GridCell.Tab.0.center/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="216" key="GridCell.Tab.0.center/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606687177774" />
+    <state width="1825" height="489" key="GridCell.Tab.0.center/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851843546" />
+    <state width="1825" height="401" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1605484314274" />
+    <state width="1657" height="479" key="GridCell.Tab.0.center/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.0.center/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678105" />
+    <state width="2465" height="679" key="GridCell.Tab.0.center/72.27.2488.1413@72.27.2488.1413" timestamp="1604660267935" />
+    <state width="2465" height="392" key="GridCell.Tab.0.center/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757188" />
+    <state width="2537" height="340" key="GridCell.Tab.0.left" timestamp="1606738933137">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1825" height="268" key="GridCell.Tab.0.left/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605535912077" />
+    <state width="1657" height="268" key="GridCell.Tab.0.left/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605525553532" />
+    <state width="1201" height="444" key="GridCell.Tab.0.left/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="217" key="GridCell.Tab.0.left/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320737" />
+    <state width="2537" height="340" key="GridCell.Tab.0.left/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933137" />
+    <state width="1585" height="216" key="GridCell.Tab.0.left/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606687177774" />
+    <state width="1825" height="489" key="GridCell.Tab.0.left/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851843546" />
+    <state width="1825" height="401" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1605484314274" />
+    <state width="1657" height="479" key="GridCell.Tab.0.left/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.0.left/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678105" />
+    <state width="2465" height="679" key="GridCell.Tab.0.left/72.27.2488.1413@72.27.2488.1413" timestamp="1604660267935" />
+    <state width="2465" height="392" key="GridCell.Tab.0.left/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757186" />
+    <state width="2537" height="340" key="GridCell.Tab.0.right" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1825" height="268" key="GridCell.Tab.0.right/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605535912077" />
+    <state width="1657" height="268" key="GridCell.Tab.0.right/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605525553532" />
+    <state width="1201" height="444" key="GridCell.Tab.0.right/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="217" key="GridCell.Tab.0.right/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320737" />
+    <state width="2537" height="340" key="GridCell.Tab.0.right/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="216" key="GridCell.Tab.0.right/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606687177774" />
+    <state width="1825" height="489" key="GridCell.Tab.0.right/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851843546" />
+    <state width="1825" height="401" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1605484314276" />
+    <state width="1657" height="479" key="GridCell.Tab.0.right/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.0.right/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="679" key="GridCell.Tab.0.right/72.27.2488.1413@72.27.2488.1413" timestamp="1604660267936" />
+    <state width="2465" height="392" key="GridCell.Tab.0.right/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757188" />
+    <state width="2537" height="340" key="GridCell.Tab.1.bottom" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2465" height="348" key="GridCell.Tab.1.bottom/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605392230887" />
+    <state width="2465" height="348" key="GridCell.Tab.1.bottom/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605371567647" />
+    <state width="1201" height="444" key="GridCell.Tab.1.bottom/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="224" key="GridCell.Tab.1.bottom/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320733" />
+    <state width="2537" height="340" key="GridCell.Tab.1.bottom/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="223" key="GridCell.Tab.1.bottom/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606680077065" />
+    <state width="1825" height="312" key="GridCell.Tab.1.bottom/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851452189" />
+    <state width="1825" height="415" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1604058801786" />
+    <state width="1657" height="479" key="GridCell.Tab.1.bottom/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.1.bottom/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="334" key="GridCell.Tab.1.bottom/72.27.2488.1413@72.27.2488.1413" timestamp="1598261009183" />
+    <state width="2465" height="392" key="GridCell.Tab.1.bottom/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757191" />
+    <state width="2537" height="340" key="GridCell.Tab.1.center" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2465" height="348" key="GridCell.Tab.1.center/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605392230887" />
+    <state width="2465" height="348" key="GridCell.Tab.1.center/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605371567647" />
+    <state width="1201" height="444" key="GridCell.Tab.1.center/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="224" key="GridCell.Tab.1.center/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320733" />
+    <state width="2537" height="340" key="GridCell.Tab.1.center/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="223" key="GridCell.Tab.1.center/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606680077065" />
+    <state width="1825" height="312" key="GridCell.Tab.1.center/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851452189" />
+    <state width="1825" height="415" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1604058801785" />
+    <state width="1657" height="479" key="GridCell.Tab.1.center/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.1.center/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="334" key="GridCell.Tab.1.center/72.27.2488.1413@72.27.2488.1413" timestamp="1598261009182" />
+    <state width="2465" height="392" key="GridCell.Tab.1.center/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757190" />
+    <state width="2537" height="340" key="GridCell.Tab.1.left" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2465" height="348" key="GridCell.Tab.1.left/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605392230887" />
+    <state width="2465" height="348" key="GridCell.Tab.1.left/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605371567647" />
+    <state width="1201" height="444" key="GridCell.Tab.1.left/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="224" key="GridCell.Tab.1.left/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320733" />
+    <state width="2537" height="340" key="GridCell.Tab.1.left/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="223" key="GridCell.Tab.1.left/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606680077065" />
+    <state width="1825" height="312" key="GridCell.Tab.1.left/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851452189" />
+    <state width="1825" height="415" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1604058801785" />
+    <state width="1657" height="479" key="GridCell.Tab.1.left/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.1.left/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="334" key="GridCell.Tab.1.left/72.27.2488.1413@72.27.2488.1413" timestamp="1598261009182" />
+    <state width="2465" height="392" key="GridCell.Tab.1.left/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757189" />
+    <state width="2537" height="340" key="GridCell.Tab.1.right" timestamp="1606738933138">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2465" height="348" key="GridCell.Tab.1.right/1680.0.2560.1440/0.190.1680.1050@0.190.1680.1050" timestamp="1605392230887" />
+    <state width="2465" height="348" key="GridCell.Tab.1.right/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605371567647" />
+    <state width="1201" height="444" key="GridCell.Tab.1.right/1680.0.2560.1440/0.390.1680.1050@1680.0.2560.1440" timestamp="1605099491371" />
+    <state width="1585" height="224" key="GridCell.Tab.1.right/3600.0.2560.1440/72.27.1848.1053/1920.0.1680.1050@72.27.1848.1053" timestamp="1606399320733" />
+    <state width="2537" height="340" key="GridCell.Tab.1.right/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606738933138" />
+    <state width="1585" height="223" key="GridCell.Tab.1.right/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606680077065" />
+    <state width="1825" height="312" key="GridCell.Tab.1.right/72.27.1848.1053/2560.390.1680.1050@72.27.1848.1053" timestamp="1604851452189" />
+    <state width="1825" height="415" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1604058801785" />
+    <state width="1657" height="479" key="GridCell.Tab.1.right/72.27.2488.1413/2560.390.1680.1050@2560.390.1680.1050" timestamp="1604507869045" />
+    <state width="1825" height="312" key="GridCell.Tab.1.right/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604862678106" />
+    <state width="2465" height="334" key="GridCell.Tab.1.right/72.27.2488.1413@72.27.2488.1413" timestamp="1598261009182" />
+    <state width="2465" height="392" key="GridCell.Tab.1.right/72.27.4168.1413@72.27.4168.1413" timestamp="1604687757190" />
+    <state x="1746" y="179" width="900" height="737" key="SettingsEditor" timestamp="1606739446521">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1746" y="179" key="SettingsEditor/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606739446521" />
+    <state x="120" y="158" width="900" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1604966430450" />
+    <state x="180" y="203" key="SettingsEditor/72.27.4168.1413@72.27.4168.1413" timestamp="1598355453200" />
+    <state width="1278" height="511" key="XDebugger.FullValuePopup" timestamp="1606152696418">
+      <screen x="72" y="27" width="1608" height="1023" />
+    </state>
+    <state width="1278" height="511" key="XDebugger.FullValuePopup/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606152696418" />
+    <state x="2948" y="550" width="848" height="674" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606225391906">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2948" y="550" width="848" height="674" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1680.0.2560.1440/0.190.1680.1050@1680.0.2560.1440" timestamp="1605194261678" />
+    <state x="2948" y="550" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1608.1023/1680.0.2560.1440@1680.0.2560.1440" timestamp="1606225391906" />
+    <state x="1680" y="25" width="1291" height="631" key="dock-window-1" timestamp="1606067974124">
+      <screen x="1680" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1680" y="25" width="1291" height="631" key="dock-window-1/72.27.1608.1023/1680.0.2560.1440@72.27.1608.1023" timestamp="1606067974124" />
+    <state x="2560" y="390" width="1680" height="1050" key="dock-window-1/72.27.2488.1413/2560.390.1680.1050@72.27.2488.1413" timestamp="1604156741449" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/PDB_Parser.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/correct_mmcif.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/correct_mmcif.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/T_test.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/statistical_analysis.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/DynaMine/predictor.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/features.py</url>
+          <line>279</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/features.py</url>
+          <line>581</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/helper.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unused/compute_SASA.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/convert_conservation.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/fix_conservation.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Utils/fix_conservation.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AnalysisPipeline/AnalysisComputer.py</url>
+          <line>254</line>
+          <option name="timeStamp" value="319" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

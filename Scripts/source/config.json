@@ -1,0 +1,157 @@
+{
+	"features": {
+		"PTM": {
+			"import_path": "Features.UniProt.PTM",
+			"type": "binary",
+			"default": "0"
+		},
+		"glycosylation": {
+			"import_path": "Features.UniProt.Glycosylation",
+			"type": "binary",
+			"default": "0"
+		},
+		"lipidation": {
+			"import_path": "Features.UniProt.Lipidation",
+			"type": "binary",
+			"default": "0"
+		},
+		"mod_res": {
+			"import_path": "Features.UniProt.ModRes",
+			"type": "binary",
+			"default": "0"
+		},
+		"sec_str": {
+			"import_path": "Features.UniProt.SecondaryStructure",
+			"type": "categorical"
+		},
+		"helix": {
+			"import_path": "Features.UniProt.Helix",
+			"type": "binary",
+			"default": "0"
+		},
+		"strand": {
+			"import_path": "Features.UniProt.Strand",
+			"type": "binary",
+			"default": "0"
+		},
+		"turn": {
+			"import_path": "Features.UniProt.Turn",
+			"type": "binary",
+			"default": "0"
+		},
+		"non_standard": {
+			"import_path": "Features.UniProt.NonStandard",
+			"type": "binary",
+			"default": "0"
+		},
+		"natural_variant": {
+			"import_path": "Features.UniProt.NaturalVariant",
+			"type": "binary",
+			"default": "0"
+		},
+		"compbias": {
+			"import_path": "Features.UniProt.Compbias",
+			"type": "binary",
+			"default": "0"
+		},
+		"disulfid": {
+			"import_path": "Features.UniProt.Disulfid",
+			"type": "binary",
+			"default": "0"
+		},
+		"aa": {
+			"import_path": "Features.AA.AA",
+			"type": "categorical"
+		},
+		"hydropathy": {
+			"import_path": "Features.FASTA.Hydropathy",
+			"type": "ordinal",
+			"default": "4.2"
+		},
+		"polarity": {
+			"import_path": "Features.FASTA.Polarity",
+			"type": "categorical"
+		},
+		"charged": {
+			"import_path": "Features.FASTA.Charged",
+			"type": "binary",
+			"default": "0"
+		},
+		"aromaticity": {
+			"import_path": "Features.FASTA.Aromaticity",
+			"type": "binary",
+			"default": "0"
+		},
+		"mol_weight": {
+			"import_path": "Features.FASTA.MolecularWeight",
+			"type": "ordinal",
+			"default": "113"
+		},
+		"H_bond_atoms": {
+			"import_path": "Features.FASTA.HBondAtoms",
+			"type": "ordinal",
+			"default": "3"
+		},
+		"HSE_up": {
+			"import_path": "Features.PDB.HSE_up",
+			"type": "continuous",
+			"default": "5.5"
+		},
+		"HSE_down": {
+			"import_path": "Features.PDB.HSE_down",
+			"type": "continuous",
+			"default": "7.6"
+		},
+		"exposure_CN": {
+			"import_path": "Features.PDB.ExposureCN",
+			"type": "continuous",
+			"default": "8.05"
+		},
+		"bfactor": {
+			"import_path": "Features.PDB.BFactor",
+			"type": "continuous",
+			"default": "14.78"
+		},
+		"pdbekb_conservation": {
+			"import_path": "Features.PDBeKB.Conservation",
+			"type": "ordinal", 
+			"default": "1"
+		},
+		"dynamine": {
+			"import_path": "Features.PDBeKB.Dynamine",
+			"type": "continuous",
+			"default": "0.45"
+		},
+		"efoldmine": {
+			"import_path": "Features.PDBeKB.Efoldmine",
+			"type": "continuous",
+			"default": "0.09"
+		},
+		"depth": {
+			"import_path": "Features.PDBeKB.Depth",
+			"type": "continuous",
+			"default": "0.28"
+		},
+		"mobiDB": {
+			"import_path": "Features.OtherResources.MobiDB",
+			"type": "continuous",
+			"default": "0.086"
+		},
+		"phi_angle": {
+			"import_path": "Features.OtherResources.PhiAngle",
+			"type": "continuous",
+			"default": "-36.2"
+		},
+		"psi_angle": {
+			"import_path": "Features.OtherResources.PsiAngle",
+			"type": "continuous",
+			"default": "16.84"
+		},
+		"cis_peptide": {
+			"import_path": "Features.OtherResources.CisPeptide",
+			"type": "binary",
+			"default": "0"
+		}
+	}	
+
+}

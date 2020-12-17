@@ -1,0 +1,10 @@
+1kae	A	#nonstandard residue - MSE; nonstandard AA, but ligand - HSO
+2nw8	A	#ligand AA (TRP 307,308)
+1kd2	B	#glycosylation, mod_res
+1hur	B	#lipidation, mod_res; nonstandard, but ligand - GDP
+3hvl	A	#discontinuous chain and covered by two different uniprot records
+3hp8	A	#three different uniprot records
+1hp0	A	#great for mappings testing...numbering starting from 0, numbering not successive (0,2,3,...), chain discontinuous in the middle (covered by 1 UniProt record)
+1lbc	A	#some residues incomplete (atoms missing) -> problems with HSE feature
+1igy	B	#insertion codes (82,82A,82B,82C,83), numbering not successive (314,317)
+1fvu	B	#disulfid
