@@ -163,8 +163,8 @@ Options:
 ```
 
 ### Examples
-We will show the usage on a short test dataset [test.txt](./data/datasets/test.txt) of 10 proteins. You can replace it with any [pre-defined dataset
-](../data/datasets/) or with your own file. 
+We will show the usage on a [Chen11 dataset](./data/datasets/chen11.txt) with 241 structures. You can replace it with any [pre-defined dataset
+](../data/datasets/) or with your own file. If you only want to test the usage of pipeline, it is recommended to use much smaller test dataset [test.txt](./data/datasets/test.txt) with 10 proteins, which takes much less time.
 
 First, go to cloned repository:
 ```
@@ -174,25 +174,25 @@ cd LBS_analysis_pipeline
 Then run the pipeline:
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test
+python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11
 ```
 This is the **basic usage**. It downloads all the structures, computes binding sites, all features defined in config, and analysis of those features. By default, the analysis is computed for all the data rows. The random sampling can be done by **specifying the sample size and number of iterations**:
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -s 500 -i 10
+python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11 -s 500 -i 10
 ```
 In the example above, in each iteration, 500 rows will be randomly sampled from the whole dataset. If we want to **take the same number of binding and nonbinding rows**, we need to set the balance_binding_ratio to true. In the following example, the analysis will be computed with 500 binding rows AND 500 nonbinding rows.
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -s 500 -i 10 -b true
+python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11 -s 500 -i 10 -b true
 ```
 In all the examples above, the analysis was computed for all the features in the config file. It is possible to **specify a subset of features**:
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -f hydropathy,aromaticity
+python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11 -f hydropathy,aromaticity
 ```
 We could need to **compute only some parts of the pipeline**, for example ligand bingind sites. This can be done by specifying particular task. The pipeline computes only data needed for this task. The following command downloads data, computes mappings and ligand binding sites, but does not compute any feature values or analysis, because these computations are not needed for the main task ('L' - ligand binding sites):
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -t L
+python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11 -t L
 ```
 
 ### Notes
