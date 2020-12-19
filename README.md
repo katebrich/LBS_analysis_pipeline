@@ -21,9 +21,19 @@ Below, you can learn how to:
 * BioPython 1.76
 * NumPy
 * SciPy
-* P2Rank 2.2 or later (only for part 3 of the tutorial)
+* Matplotlib
+* P2Rank 2.2 (only for part 3 of the tutorial)
 
-TODO requirements.txt
+The Python packages can be installed all at once with the [requirement file](https://note.nkmk.me/en/python-pip-install-requirements/) requirements.txt:
+```
+pip install -r requirements.txt
+```
+
+Or the whole virtual environment can be created from the environment.yml file:
+
+```
+conda env create -f environment.yml
+```
 
 ### Setup:
 The pipeline requires no installation. First, clone this repository:
@@ -36,7 +46,7 @@ cd LBS_analysis_pipeline
 ```
 Now you can run the pipeline. More examples are described below.
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test
 ```
 
 
@@ -164,25 +174,25 @@ cd LBS_analysis_pipeline
 Then run the pipeline:
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test
 ```
 This is the **basic usage**. It downloads all the structures, computes binding sites, all features defined in config, and analysis of those features. By default, the analysis is computed for all the data rows. The random sampling can be done by **specifying the sample size and number of iterations**:
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -s 500 -i 10
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -s 500 -i 10
 ```
 In the example above, in each iteration, 500 rows will be randomly sampled from the whole dataset. If we want to **take the same number of binding and nonbinding rows**, we need to set the balance_binding_ratio to true. In the following example, the analysis will be computed with 500 binding rows AND 500 nonbinding rows.
 
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -s 500 -i 10 -b true
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -s 500 -i 10 -b true
 ```
 In all the examples above, the analysis was computed for all the features in the config file. It is possible to **specify a subset of features**:
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -f hydropathy,aromaticity
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -f hydropathy,aromaticity
 ```
 We could need to **compute only some parts of the pipeline**, for example ligand bingind sites. This can be done by specifying particular task. The pipeline computes only data needed for this task. The following command downloads data, computes mappings and ligand binding sites, but does not compute any feature values or analysis, because these computations are not needed for the main task ('L' - ligand binding sites):
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -t L
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -t L
 ```
 
 ### Notes
@@ -209,7 +219,7 @@ User can define a custom feature and implement a method for getting the values.
 
 If you don't want to add the custom feature to the existing ones, you can create a new config file and pass it as argument:
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -c **new_config_path**
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -c **new_config_path**
 ```
 
 <a name="three"></a>
@@ -232,9 +242,9 @@ We need to create a directory 'features' with subdirectory 'XXX' and put the fil
 We do the same thing for ligand binding sites values - create a directory 'lbs' and put there files for all the structure.
 Then, we run this command:
 ```
-python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output -t A
+python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/test -t A
 ```
-where 'output' is the directory which contains subdirectories 'features' and 'lbs' with files in correct format. The program **should recognize that these folders already exist** and it should compute the analysis only.
+where 'output/test' is the directory which contains subdirectories 'features' and 'lbs' with files in correct format. The program **should recognize that these folders already exist** and it should compute the analysis only.
 
 <a name="four"></a>
 ## 3. Training a P2Rank model

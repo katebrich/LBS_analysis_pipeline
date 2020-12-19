@@ -49,12 +49,12 @@ class AnalysisComputer():
                 shutil.rmtree(feature_output_dir)
             os.makedirs(feature_output_dir)
             try:
-                self.process_feature(feature, sample_size, iterations, balance_binding_ratio, draw_plots, alpha, threads)
+                if self.process_feature(feature, sample_size, iterations, balance_binding_ratio, draw_plots, alpha, threads):
+                    logger.info(f"Feature {feature}: done")
             except Exception as ex:
                 logger.error(f"Feature {feature}: ERROR: {ex}", exc_info=True)
                 self.errors.append(feature)
                 continue
-            logger.info(f"Feature {feature}: done")
 
         logger.info(f"Running analysis finished in {math.ceil(time.time() - start)}s.")
 
@@ -93,13 +93,25 @@ class AnalysisComputer():
                 f.write(f"********************************\n")
 
                 if (sample_size == 0): #no sampling
+                    if len(data_binding) < 10 or len(data_nonbinding) < 10:
+                        logger.error(f"Feature {feature}: Not sufficient number of observations to perform the analysis.")
+                        self.errors.append(feature)
+                        return False
                     sample_binding = data_binding
                     sample_nonbinding = data_nonbinding
                 elif not balance_binding_ratio: #do not balance the ratio, sample from the whole dataset
+                    if len(pairs) < sample_size:
+                        logger.error(f"Feature {feature}: The sample size is bigger than number of observations.")
+                        self.errors.append(feature)
+                        return False
                     sample = random.sample(pairs, sample_size)
                     sample_binding = [x[1] for x in sample if x[0] == 1]
                     sample_nonbinding = [x[1] for x in sample if x[0] == 0]
                 else: #simple sampling without replacement
+                    if len(data_binding) < sample_size or len(data_nonbinding) < sample_size:
+                        logger.error(f"Feature {feature}: The sample size is bigger than number of observations.")
+                        self.errors.append(feature)
+                        return False
                     sample_binding = random.sample(data_binding, sample_size)
                     sample_nonbinding = random.sample(data_nonbinding, sample_size)
 
@@ -111,10 +123,10 @@ class AnalysisComputer():
                 else:
                     logger.error(f"Unknown type of feature '{feature_type}'. Please specify the type in config.")
                     self.errors.append(feature)
-                    return
+                    return False
                 if res == None:
                     self.errors.append(feature)
-                    return
+                    return False
 
                 statistics.append(res[0])
                 p_values.append(res[1])
@@ -153,6 +165,8 @@ class AnalysisComputer():
         #save p-values to file
         with open(os.path.join(feature_output_dir, f"p_values.txt"), 'w') as f:
             f.write('\n'.join(f"{x}" for x in p_values))
+
+        return True
 
     def prepare_lbs_dicts(self):
         # get ligand binding sites values
