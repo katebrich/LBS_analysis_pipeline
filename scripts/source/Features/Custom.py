@@ -23,3 +23,23 @@ Example:
 	}
 
 '''
+
+
+
+
+import os
+from helper import res_mappings_author_to_pdbe, get_mappings_path_long
+class INTAAConservation():
+    def get_values(self, data_dir, pdb_id, chain_id):
+        filepath = os.path.join(data_dir, "INTAA_conservation", pdb_id + chain_id + ".pdb.ic")
+        feature_vals = []
+        mappings = dict(
+            res_mappings_author_to_pdbe(pdb_id, chain_id, get_mappings_path_long(data_dir, pdb_id, chain_id)))
+        with open(filepath) as file:
+            for line in file:
+                line = line.split('\t')
+                score = line[4]
+                auth_res_num = line[2]+line[3].strip() # author res num + insertion code
+                pdbe_res_num = mappings[auth_res_num]
+                feature_vals.append((pdbe_res_num, score))
+        return feature_vals

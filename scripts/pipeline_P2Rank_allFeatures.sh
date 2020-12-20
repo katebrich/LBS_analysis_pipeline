@@ -2,7 +2,7 @@
 set -e
 
 P2RANK_PATH="/home/katebrich/Documents/diplomka/P2Rank" #todo edit !!!!!
-PYTHON_SCRIPTS_PATH=./source
+PYTHON_SCRIPTS_PATH=scripts/source
 PYTHON="python3"
 
 ##########################################
@@ -14,8 +14,10 @@ OPTIND=1 # Reset in case getopts has been used previously in the shell.
 # Initialize variables:
 loops=10
 threads=4
+config=${PYTHON_SCRIPTS_PATH}/config.json
+features_list="." #take all features in config by default
 
-while getopts "t:e:f:l:m:" opt; do
+while getopts "t:e:f:l:m:c:" opt; do
 	case "$opt" in
 	t)
 		dataset_train_file=$OPTARG
@@ -31,6 +33,9 @@ while getopts "t:e:f:l:m:" opt; do
 		;;
 	m)
 		threads=$OPTARG
+		;;
+	c)
+		config=$OPTARG
 		;;
 	esac
 done
@@ -57,11 +62,11 @@ data_eval_dir="${P2RANK_PATH}/datasets/${dataset_eval_name}"
 #run pipeline, get data and analysis
 TASKS="A"
 echo "Running analysis_pipeline.py for dataset $dataset_train_name"
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_train_file -o $data_train_dir -t $TASKS -m $threads -f $features_list -s 0 -i 1 -b 0    #download data and run analysis with all rows, 1 iteration
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_train_file -o $data_train_dir -t $TASKS -m $threads -f $features_list -s 500 -i 10 -b 1 #run analysis again with sample size 500, 10 iterations
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_train_file -o $data_train_dir -t $TASKS -m $threads -f $features_list -c $config -s 0 -i 1 -b 0      #download data and run analysis with all rows, 1 iteration
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_train_file -o $data_train_dir -t $TASKS -m $threads -f $features_list -c $config -s 500 -i 1000 -b 1 #run analysis again with sample size 500, 10 iterations
 echo "Running analysis_pipeline.py for dataset $dataset_eval_name"
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_eval_file -o $data_eval_dir -t $TASKS -m $threads -f $features_list -s 0 -i 1 -b 0    #download data and run analysis with all rows, 1 iteration
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_eval_file -o $data_eval_dir -t $TASKS -m $threads -f $features_list -s 500 -i 10 -b 1 #run analysis again with sample size 500, 10 iterations
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_eval_file -o $data_eval_dir -t $TASKS -m $threads -f $features_list -c $config -s 0 -i 1 -b 0      #download data and run analysis with all rows, 1 iteration
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/analysis_pipeline.py -d $dataset_eval_file -o $data_eval_dir -t $TASKS -m $threads -f $features_list -c $config -s 500 -i 1000 -b 1 #run analysis again with sample size 500, 10 iterations
 
 #create dataset files for P2Rank
 echo "Creating P2Rank dataset file for dataset $dataset_train_name"
@@ -71,9 +76,9 @@ ${PYTHON} ${PYTHON_SCRIPTS_PATH}/create_p2rank_ds.py -p ${data_eval_dir}/PDB -o 
 
 #create input files for P2Rank Custom feature
 echo "Feature $feature: Creating P2Rank custom feature files for $dataset_train_name"
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/create_p2rank_custom_feature_files.py -d $dataset_train_file -i $data_train_dir -o $data_train_dir/P2Rank/custom_features -t $threads -f $features_list
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/create_p2rank_custom_feature_files.py -d $dataset_train_file -i $data_train_dir -o $data_train_dir/P2Rank/custom_features -c $config -t $threads -f $features_list
 echo "Feature $feature: Creating P2Rank custom feature files for $dataset_eval_name"
-${PYTHON} ${PYTHON_SCRIPTS_PATH}/create_p2rank_custom_feature_files.py -d $dataset_eval_file -i $data_eval_dir -o $data_eval_dir/P2Rank/custom_features -t $threads -f $features_list
+${PYTHON} ${PYTHON_SCRIPTS_PATH}/create_p2rank_custom_feature_files.py -d $dataset_eval_file -i $data_eval_dir -o $data_eval_dir/P2Rank/custom_features -c $config -t $threads -f $features_list
 
 #############################################
 #   P2Rank MODEL TRAINING AND EVALUATION    #

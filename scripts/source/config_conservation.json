@@ -1,0 +1,20 @@
+{
+	"features": {
+		"conservation": {
+			"import_path": "Features.OtherResources.Conservation",
+			"type": "continuous",
+			"default": "0.65"
+		},
+		"INTAA_conservation": {
+			"import_path": "Features.Custom.INTAAConservation",
+			"type": "continuous",
+			"default": "2.5"
+		},
+		"pdbekb_conservation": {
+			"import_path": "Features.PDBeKB.Conservation",
+			"type": "ordinal", 
+			"default": "1"
+		}
+	}	
+
+}

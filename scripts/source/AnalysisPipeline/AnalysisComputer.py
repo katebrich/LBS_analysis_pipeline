@@ -23,6 +23,7 @@ class AnalysisComputer():
     b_ratios = []
     p_values_means = []
     p_val_perc = []
+    cohens_d_vals = []
     means = []
     errors = []
     features_list = []
@@ -139,6 +140,7 @@ class AnalysisComputer():
         self.p_values.append((feature, p_values))
         self.b_ratios.append((feature, b_ratios))
         self.p_values_means.append((feature, np.mean(p_values)))
+        self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
 
         #save difference of means and variance for summary
         if (feature_type == "continuous"):
@@ -253,6 +255,13 @@ class AnalysisComputer():
                 f.write('{0:.4g}'.format(line[1]))
                 f.write('\n')
 
+        self.cohens_d_vals.sort(key=lambda x: x[1])  # sort by value
+        with open(os.path.join(self.output_dir, f"cohens_d.csv"), 'w') as f:
+            for line in self.cohens_d_vals:
+                f.write(f"{str(line[0])}, ")
+                f.write('{0:.4g}'.format(line[1]))
+                f.write('\n')
+
         self.b_ratios.sort(key=lambda x: x[0])  # sort by name
         with open(os.path.join(self.output_dir, f"binding_ratios.csv"), 'w') as f:
             #f.write(f"Feature, # Binding, # Nonbinding, Binding/Total\n") # header
@@ -342,6 +351,18 @@ class AnalysisComputer():
         f.write(f"p-value: {p_value}\n")
 
         return (chi2, p_value)
+
+    def cohens_d(self, sample1, sample2):
+        # calculate the size of samples
+        n1, n2 = len(sample1), len(sample2)
+        # calculate the variance of the samples
+        s1, s2 = np.var(sample1, ddof=1), np.var(sample2, ddof=1)
+        # calculate the pooled standard deviation
+        s = math.sqrt(((n1 - 1) * s1 + (n2 - 1) * s2) / (n1 + n2 - 2))
+        # calculate the means of the samples
+        u1, u2 = np.mean(sample1), np.mean(sample2)
+        # calculate the effect size
+        return abs((u1 - u2) / s)
 
 
     '''def fischers_exact_test(self, data, results_file, feature):

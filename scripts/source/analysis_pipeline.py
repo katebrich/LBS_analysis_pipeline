@@ -33,15 +33,15 @@ alpha = 0.05
 #todo delete, only for debugging
 '''
 P2Rank_path="/home/katebrich/Documents/diplomka/P2Rank"
-dataset_name="mix_filter_p2rank"
-tasks="A"
-dataset_file=f"/home/katebrich/Documents/diplomka/GitHub/datasets/{dataset_name}.txt"
-output_dir= f"{P2Rank_path}/datasets_final/{dataset_name}"
-#features_list = "aa,depth,sec_str,pdbekb_conservation,strand"
-config_path = "config_all.json"
-sample_size = 500
-iterations = 1000
-balance_binding_ratio = True
+dataset_name="chen11_conservation"
+tasks="F,A"
+dataset_file=f"/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/data/datasets/{dataset_name}.txt"
+output_dir= f"{P2Rank_path}/datasets/{dataset_name}"
+features_list = "INTAA_conservation"
+config_path = "config_conservation.json"
+sample_size = 0
+iterations = 1
+balance_binding_ratio = False
 '''
 
 def usage():

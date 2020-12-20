@@ -1,0 +1,33 @@
+2020-12-20 13:10:14,424 [INFO] MappingsComputer.py(line 26) Creating mapping cache started...
+2020-12-20 13:11:46,914 [INFO] MappingsComputer.py(line 37) Creating mapping cache finished in 93s. All structures processed successfully.
+2020-12-20 13:11:46,916 [INFO] LigandBindingSitesComputer.py(line 46) Computing ligand binding sites started...
+2020-12-20 13:14:17,868 [INFO] LigandBindingSitesComputer.py(line 58) Computing ligand binding sites finished in 151s. All structures processed successfully.
+2020-12-20 13:14:17,869 [INFO] FeaturesComputer.py(line 36) Computing feature conservation started...
+2020-12-20 13:14:18,156 [INFO] FeaturesComputer.py(line 48) Computing feature conservation finished in 1s. All structures processed successfully.
+2020-12-20 13:14:18,157 [INFO] FeaturesComputer.py(line 36) Computing feature INTAA_conservation started...
+2020-12-20 13:14:19,187 [INFO] FeaturesComputer.py(line 48) Computing feature INTAA_conservation finished in 2s. All structures processed successfully.
+2020-12-20 13:14:19,188 [INFO] FeaturesComputer.py(line 36) Computing feature pdbekb_conservation started...
+2020-12-20 13:17:59,447 [DEBUG] FeaturesComputer.py(line 70) Error while processing 3dzl B: HTTP Error 500: Internal Server Error
+Traceback (most recent call last):
+  File "/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/scripts/source/AnalysisPipeline/FeaturesComputer.py", line 62, in compute_feature
+    feat_vals = feature_class().get_values(self.input_dir, pdb_id, chain_id)
+  File "/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/scripts/source/Features/PDBeKB.py", line 34, in get_values
+    response = restAPI_get_json(url)
+  File "/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/scripts/source/helper.py", line 52, in restAPI_get_json
+    return json.loads(restAPI_get(url))
+  File "/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/scripts/source/helper.py", line 46, in restAPI_get
+    with urllib.request.urlopen(req) as f:
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 531, in open
+    response = meth(req, response)
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 641, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 569, in error
+    return self._call_chain(*args)
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 503, in _call_chain
+    result = func(*args)
+  File "/home/katebrich/anaconda3/lib/python3.7/urllib/request.py", line 649, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+2020-12-20 13:17:59,452 [ERROR] FeaturesComputer.py(line 78) 318/399: 3dzl B NOT PROCESSED ! See log for more details.
