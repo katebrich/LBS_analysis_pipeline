@@ -155,7 +155,7 @@ for opt, arg in opts:
             print(f"Number of threads must be a positive integer.")
             sys.exit(1)
     elif opt in ("-f", "--features"):
-        features = arg.split(',')
+        features = arg
     elif opt in ("-c", "--config_path"):
         config_path = arg
         if not os.path.exists(config_path):
@@ -173,6 +173,15 @@ if (input_dir == ""):
     sys.exit(1)
 
 config = Config(config_path)
+
+if (features == "" or features == "."):
+    features = config.get_all_feature_names()  # if no features specified, take all from the config
+else:
+    features = features.split(',')
+    # check features
+    for feature in features:
+        if not config.is_feature_defined(feature):
+            raise ValueError(f"Feature {feature} not defined in {config_path}")
 
 p = P2RankCustomFeatureCreator(dataset_file, output_dir, input_dir, features, config)
 p.run(threads)

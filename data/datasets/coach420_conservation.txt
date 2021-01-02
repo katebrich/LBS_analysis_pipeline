@@ -269,7 +269,6 @@
 2oec	B
 2ovd	A
 2pkn	A
-2q6v	A
 2q71	A
 2qeh	A
 2qo9	A
@@ -336,7 +335,6 @@
 3du4	A
 3duw	A
 3dwr	A
-3dzl	B
 3e3s	A
 3efv	A
 3ej0	A
