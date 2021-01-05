@@ -175,7 +175,7 @@ Then run the pipeline:
 ```
 python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11
 ```
-This is the **basic usage**. It downloads all the structures, computes binding sites, all features defined in config, and analysis of those features. By default, the analysis is computed for all the data rows. The random sampling can be done by **specifying the sample size and number of iterations**:
+This is the **basic usage**. It downloads all the structures, computes binding sites, all features defined in config, and carries out analysis of those features. By default, the analysis is computed for all the data rows. The random sampling can be done by **specifying the sample size and number of iterations**:
 
 ```
 python3 scripts/source/analysis_pipeline.py -d data/datasets/chen11.txt -o output/chen11 -s 500 -i 10
