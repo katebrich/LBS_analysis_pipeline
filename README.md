@@ -163,8 +163,7 @@ Options:
 ```
 
 ### Examples
-We will show the usage on a [Chen11 dataset](./data/datasets/chen11.txt) with 241 structures. You can replace it with any [pre-defined dataset
-](../data/datasets/) or with your own file. If you only want to test the usage of pipeline, it is recommended to use much smaller test dataset [test.txt](./data/datasets/test.txt) with 10 proteins, which takes much less time.
+We will show the usage on [chen11 dataset](./data/datasets/chen11.txt) with 241 structures. You can replace it with any [pre-defined dataset](./data/datasets/) or with your own file. If you only want to test the usage of pipeline, it is recommended to use much smaller test dataset [test.txt](./data/datasets/test.txt) with 10 proteins, which takes much less time.
 
 First, go to cloned repository:
 ```
@@ -214,7 +213,7 @@ User can define a custom feature and implement a method for getting the values.
 - add feature to the **[config file]**(scripts/source/config.json)
   - **import_path**: path to the implementation. The class is loaded dynamically according to the feature name.
   - **type**: binary, categorical, ordinal or continuous. Hypothesis test is chosen according to the type (Welch's test for continuous and Chi-squared test for the rest). Plots can also differ according to the type.
-  - **default**: optional. It is needed when creating feature files for P2Rank (described in section [four](#four)). It specifies the default value for rows where the value is missing.
+  - **default**: optional. It is needed when creating feature files for P2Rank (described in [section four](#four)). It specifies the default value for rows where the value is missing.
 - **implement** class with method `get_values(self, data_dir, pdb_id, chain_id)`. It can be located anywhere (the path to the class is provided in the config); however, there is a prepared script [`Custom.py`](scripts/source/Features/Custom.py) for this purpose, with an example implementation.
 
 If you don't want to add the custom feature to the existing ones, you can create a new config file and pass it as argument:
@@ -223,7 +222,7 @@ python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/
 ```
 
 <a name="three"></a>
-## 2. Running analysis on custom data
+## 3. Running analysis on custom data
 By specifying a task, we tell the program what is the desired output. The program **automatically decides what else is needed to compute for this task**. For example, if the task is 'L' (ligand binding sites computation), the program checks the existence of folders 'PDB' and 'mappings' (see the [folder structure](#folders) above). If they don't exist, the tasks 'D' (download) and 'M' (mappings) are automatically processed before binding sites computation.
 
 Thus, if you already have some data already downloaded/computed, you can **run the pipeline with them by putting them into the correct folders**.
@@ -247,7 +246,7 @@ python3 scripts/source/analysis_pipeline.py -d data/datasets/test.txt -o output/
 where 'output/test' is the directory which contains subdirectories 'features' and 'lbs' with files in correct format. The program **should recognize that these folders already exist** and it should compute the analysis only.
 
 <a name="four"></a>
-## 3. Training a P2Rank model
+## 4. Training a P2Rank model
 
 **P2Rank** (TODO - more info about the software) has an interface for **adding custom features** and training new models with these features. The way to do that is described in the [tutorial](https://github.com/cusbg/p2rank-framework/wiki/P2Rank-Custom-Feature).
 
