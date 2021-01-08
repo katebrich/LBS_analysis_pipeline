@@ -1,5 +1,58 @@
-2020-12-20 16:32:54,989 [INFO] AnalysisComputer.py(line 43) Running analysis started...
-2020-12-20 16:32:59,386 [INFO] AnalysisComputer.py(line 54) Feature conservation: done
-2020-12-20 16:33:03,530 [INFO] AnalysisComputer.py(line 54) Feature INTAA_conservation: done
-2020-12-20 16:33:07,412 [INFO] AnalysisComputer.py(line 54) Feature pdbekb_conservation: done
-2020-12-20 16:33:07,412 [INFO] AnalysisComputer.py(line 60) Running analysis finished in 13s.
+2021-01-07 15:50:13,718 [INFO] AnalysisComputer.py(line 45) Running analysis started...
+2021-01-07 15:50:37,686 [INFO] AnalysisComputer.py(line 56) Feature lbs: done
+2021-01-07 15:50:53,736 [INFO] AnalysisComputer.py(line 56) Feature random_binary: done
+2021-01-07 15:51:17,913 [INFO] AnalysisComputer.py(line 56) Feature random_cont: done
+2021-01-07 15:51:28,853 [ERROR] AnalysisComputer.py(line 358) Feature PTM: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:51:39,447 [ERROR] AnalysisComputer.py(line 358) Feature glycosylation: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:51:50,930 [ERROR] AnalysisComputer.py(line 358) Feature lipidation: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:52:02,131 [ERROR] AnalysisComputer.py(line 358) Feature mod_res: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:52:07,732 [INFO] AnalysisComputer.py(line 56) Feature variation: done
+2021-01-07 15:52:22,377 [INFO] AnalysisComputer.py(line 56) Feature sec_str: done
+2021-01-07 15:52:38,242 [INFO] AnalysisComputer.py(line 56) Feature helix: done
+2021-01-07 15:52:54,072 [INFO] AnalysisComputer.py(line 56) Feature strand: done
+2021-01-07 15:53:10,138 [INFO] AnalysisComputer.py(line 56) Feature turn: done
+2021-01-07 15:53:21,760 [ERROR] AnalysisComputer.py(line 358) Feature non_standard: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:53:32,863 [ERROR] AnalysisComputer.py(line 358) Feature natural_variant: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:53:44,920 [ERROR] AnalysisComputer.py(line 358) Feature compbias: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:53:58,443 [ERROR] AnalysisComputer.py(line 358) Feature disulfid: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:54:16,062 [INFO] AnalysisComputer.py(line 56) Feature aa: done
+2021-01-07 15:54:34,613 [INFO] AnalysisComputer.py(line 56) Feature aa_ALA: done
+2021-01-07 15:54:51,934 [ERROR] AnalysisComputer.py(line 358) Feature aa_CYS: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:55:16,371 [INFO] AnalysisComputer.py(line 56) Feature aa_ASP: done
+2021-01-07 15:55:39,080 [INFO] AnalysisComputer.py(line 56) Feature aa_GLU: done
+2021-01-07 15:55:59,778 [INFO] AnalysisComputer.py(line 56) Feature aa_PHE: done
+2021-01-07 15:56:19,869 [INFO] AnalysisComputer.py(line 56) Feature aa_GLY: done
+2021-01-07 15:56:36,150 [INFO] AnalysisComputer.py(line 56) Feature aa_HIS: done
+2021-01-07 15:56:52,451 [INFO] AnalysisComputer.py(line 56) Feature aa_ILE: done
+2021-01-07 15:57:08,733 [INFO] AnalysisComputer.py(line 56) Feature aa_LYS: done
+2021-01-07 15:57:24,853 [INFO] AnalysisComputer.py(line 56) Feature aa_LEU: done
+2021-01-07 15:57:36,931 [ERROR] AnalysisComputer.py(line 358) Feature aa_MET: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 15:57:53,707 [INFO] AnalysisComputer.py(line 56) Feature aa_ASN: done
+2021-01-07 15:58:10,368 [INFO] AnalysisComputer.py(line 56) Feature aa_PRO: done
+2021-01-07 15:58:34,395 [INFO] AnalysisComputer.py(line 56) Feature aa_GLN: done
+2021-01-07 15:58:50,294 [INFO] AnalysisComputer.py(line 56) Feature aa_ARG: done
+2021-01-07 15:59:08,172 [INFO] AnalysisComputer.py(line 56) Feature aa_SER: done
+2021-01-07 15:59:33,569 [INFO] AnalysisComputer.py(line 56) Feature aa_THR: done
+2021-01-07 15:59:51,432 [INFO] AnalysisComputer.py(line 56) Feature aa_VAL: done
+2021-01-07 16:00:02,956 [ERROR] AnalysisComputer.py(line 358) Feature aa_TRP: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 16:00:20,362 [INFO] AnalysisComputer.py(line 56) Feature aa_TYR: done
+2021-01-07 16:00:36,734 [INFO] AnalysisComputer.py(line 56) Feature hydropathy: done
+2021-01-07 16:00:56,794 [INFO] AnalysisComputer.py(line 56) Feature polarity: done
+2021-01-07 16:01:13,498 [INFO] AnalysisComputer.py(line 56) Feature charged: done
+2021-01-07 16:01:29,424 [INFO] AnalysisComputer.py(line 56) Feature aromaticity: done
+2021-01-07 16:01:41,840 [ERROR] AnalysisComputer.py(line 358) Feature mol_weight: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 16:01:59,107 [INFO] AnalysisComputer.py(line 56) Feature H_bond_atoms: done
+2021-01-07 16:02:13,828 [INFO] AnalysisComputer.py(line 56) Feature HSE_up: done
+2021-01-07 16:02:30,565 [INFO] AnalysisComputer.py(line 56) Feature HSE_down: done
+2021-01-07 16:02:45,837 [INFO] AnalysisComputer.py(line 56) Feature exposure_CN: done
+2021-01-07 16:03:03,097 [INFO] AnalysisComputer.py(line 56) Feature bfactor: done
+2021-01-07 16:03:14,991 [INFO] AnalysisComputer.py(line 56) Feature pdbekb_conservation: done
+2021-01-07 16:03:30,903 [INFO] AnalysisComputer.py(line 56) Feature dynamine: done
+2021-01-07 16:03:47,741 [INFO] AnalysisComputer.py(line 56) Feature efoldmine: done
+2021-01-07 16:04:03,999 [INFO] AnalysisComputer.py(line 56) Feature depth: done
+2021-01-07 16:04:19,752 [INFO] AnalysisComputer.py(line 56) Feature mobiDB: done
+2021-01-07 16:04:36,284 [INFO] AnalysisComputer.py(line 56) Feature phi_angle: done
+2021-01-07 16:04:53,258 [INFO] AnalysisComputer.py(line 56) Feature psi_angle: done
+2021-01-07 16:05:03,833 [ERROR] AnalysisComputer.py(line 358) Feature cis_peptide: Chi-squared test assumptions not met. More than 20% of cells have expected value of 5 or less, and/or at least one cell has expected value of 1 or less.
+2021-01-07 16:05:08,232 [INFO] AnalysisComputer.py(line 56) Feature conservation: done
+2021-01-07 16:05:08,232 [INFO] AnalysisComputer.py(line 62) Running analysis finished in 895s.

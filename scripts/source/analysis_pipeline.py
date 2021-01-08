@@ -31,18 +31,18 @@ draw_plots = True
 alpha = 0.05
 
 #todo delete, only for debugging
-'''
+
 P2Rank_path="/home/katebrich/Documents/diplomka/P2Rank"
-dataset_name="chen11_conservation"
-tasks="F,A"
+dataset_name="mix_filter_MOAD"
+tasks="A"
 dataset_file=f"/home/katebrich/Documents/diplomka/LBS_analysis_pipeline/data/datasets/{dataset_name}.txt"
 output_dir= f"{P2Rank_path}/datasets/{dataset_name}"
-features_list = "INTAA_conservation"
-config_path = "config_conservation.json"
-sample_size = 0
-iterations = 1
-balance_binding_ratio = False
-'''
+features_list = "."
+config_path = "config_all.json"
+sample_size = 500
+iterations = 1000
+balance_binding_ratio = True
+
 
 def usage():
     print("Usage: analysis_pipeline.py -d DATASET_FILE_PATH -o OUTPUT_DIR_PATH [OPTIONS]... \n")

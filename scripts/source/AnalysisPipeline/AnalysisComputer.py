@@ -24,6 +24,7 @@ class AnalysisComputer():
     p_values_means = []
     p_val_perc = []
     cohens_d_vals = []
+    cohens_w_vals = []
     means = []
     errors = []
     features_list = []
@@ -37,6 +38,7 @@ class AnalysisComputer():
         self.config = config
         self.features_list = features_list
         self.features_dir = features_dir
+        random.seed(42)
 
     def run(self, sample_size, iterations, balance_binding_ratio, draw_plots, alpha, threads):
         start = time.time()
@@ -67,7 +69,6 @@ class AnalysisComputer():
         feature_type = self.config.get_feature_type(feature) # binary/continuous/categorical/ordinal
         statistics = []
         p_values = []
-        b_ratios = []
 
         self.feature_dir = feature_dir
         self.feature = feature
@@ -131,16 +132,20 @@ class AnalysisComputer():
 
                 statistics.append(res[0])
                 p_values.append(res[1])
-                b_ratios.append(len(sample_binding)/(len(sample_binding) + len(sample_nonbinding)))
 
         if draw_plots:
             self.draw_plots(feature_type, data_binding, data_nonbinding, feature_output_dir, feature)
 
         #save values for summary
         self.p_values.append((feature, p_values))
-        self.b_ratios.append((feature, b_ratios))
+        self.b_ratios.append((feature, len(data_binding) / (len(data_binding) + len(data_nonbinding))))
         self.p_values_means.append((feature, np.mean(p_values)))
-        self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
+
+        #calculate effect sizes
+        if (feature_type == "continuous"):
+            self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
+        else:
+            self.cohens_w_vals.append((feature, self.cohens_w(data_binding, data_nonbinding)))
 
         #save difference of means and variance for summary
         if (feature_type == "continuous"):
@@ -255,9 +260,16 @@ class AnalysisComputer():
                 f.write('{0:.4g}'.format(line[1]))
                 f.write('\n')
 
-        self.cohens_d_vals.sort(key=lambda x: x[1])  # sort by value
+        self.cohens_d_vals.sort(key=lambda x: x[1], reverse=True)  # sort by value
         with open(os.path.join(self.output_dir, f"cohens_d.csv"), 'w') as f:
             for line in self.cohens_d_vals:
+                f.write(f"{str(line[0])}, ")
+                f.write('{0:.4g}'.format(line[1]))
+                f.write('\n')
+
+        self.cohens_w_vals.sort(key=lambda x: x[1], reverse=True)  # sort by value
+        with open(os.path.join(self.output_dir, f"cohens_w.csv"), 'w') as f:
+            for line in self.cohens_w_vals:
                 f.write(f"{str(line[0])}, ")
                 f.write('{0:.4g}'.format(line[1]))
                 f.write('\n')
@@ -267,7 +279,7 @@ class AnalysisComputer():
             #f.write(f"Feature, # Binding, # Nonbinding, Binding/Total\n") # header
             for line in self.b_ratios:
                 f.write(f"{str(line[0])}, ")
-                f.write(', '.join('{0:.5f}'.format(x) for x in line[1]))
+                f.write('{0:.4g}'.format(line[1]))
                 f.write('\n')
 
         self.means.sort(key=lambda x: x[1][0])  # sort by means difference
@@ -353,16 +365,34 @@ class AnalysisComputer():
         return (chi2, p_value)
 
     def cohens_d(self, sample1, sample2):
-        # calculate the size of samples
         n1, n2 = len(sample1), len(sample2)
-        # calculate the variance of the samples
         s1, s2 = np.var(sample1, ddof=1), np.var(sample2, ddof=1)
-        # calculate the pooled standard deviation
         s = math.sqrt(((n1 - 1) * s1 + (n2 - 1) * s2) / (n1 + n2 - 2))
-        # calculate the means of the samples
         u1, u2 = np.mean(sample1), np.mean(sample2)
-        # calculate the effect size
         return abs((u1 - u2) / s)
+
+    def cohens_w(self, sample_binding, sample_nonbinding):
+        sample_binding = [str(i) for i in sample_binding]  # fix for Counter
+        sample_nonbinding = [str(i) for i in sample_nonbinding]
+        binding_counts = Counter(sample_binding)
+        nonbinding_counts = Counter(sample_nonbinding)
+        keys1 = binding_counts.keys()
+        keys2 = nonbinding_counts.keys()
+        categories = list(set().union(keys1, keys2))
+        categories = sorted(categories)
+        binding = []
+        nonbinding = []
+        binding_counts_sorted = []
+        nonbinding_counts_sorted = []
+        for cat in categories:
+            binding.append(binding_counts[cat])
+            nonbinding.append(nonbinding_counts[cat])
+            binding_counts_sorted.append((cat, binding_counts[cat]))
+            nonbinding_counts_sorted.append((cat, nonbinding_counts[cat]))
+        obs = np.array([np.array(binding), np.array(nonbinding)])
+        chi2, p_value, dof, expected = stats.chi2_contingency(obs)
+        N = len(sample_binding) + len(sample_nonbinding)
+        return math.sqrt(chi2/N)
 
 
     '''def fischers_exact_test(self, data, results_file, feature):
