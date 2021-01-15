@@ -88,7 +88,7 @@ def plot_binding_nonbinding_ratios(binding_data, nonbinding_data, output_file, s
     pyplot.clf()
     pyplot.close('all')
 
-def plot_binding_nonbinding_ratios_continuous(binding_data, nonbinding_data, output_file, bins): #todo smazat
+def plot_binding_nonbinding_ratios_continuous(binding_data, nonbinding_data, output_file, bins):
     pyplot.clf()
     min_val = min(binding_data + nonbinding_data)
     max_val = max(binding_data + nonbinding_data)
@@ -136,7 +136,6 @@ def plot_binding_nonbinding_ratios_continuous(binding_data, nonbinding_data, out
         ax.get_yticklabels()[0].get_transform(), ax.transData)
     ax.text(0, ratio, "{:.3f}".format(ratio), color="red", transform=trans,
             ha="right", va="center")
-    ax.set_ylim([0,0.55])
     #round y axis labels to 3 places
     ax.yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
 

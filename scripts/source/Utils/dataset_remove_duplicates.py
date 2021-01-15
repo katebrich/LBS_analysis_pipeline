@@ -1,8 +1,8 @@
 
-dataset_name="" #todo
-new_name="" #todo
-dataset_file="" #todo
-output_file= "" #todo
+dataset_name="" #TO EDIT
+new_name="" #TO EDIT
+dataset_file="" #TO EDIT
+output_file= "" #TO EDIT
 
 structures = {}
 with open(dataset_file, 'r') as input:

@@ -68,7 +68,7 @@ class P2RankCustomFeatureCreator():
         errors = []
         try:
             aa_codes = ["ALA", "ARG", "ASN", "ASP", "CYS", "GLU", "GLN", "GLY", "HIS", "ILE", "LEU", "LYS", "MET",
-                        "PHE", "PRO", "SER", "THR", "TRP", "TYR", "VAL"]  # TODO remove when p2rank bug is corrected
+                        "PHE", "PRO", "SER", "THR", "TRP", "TYR", "VAL"]  # fix for p2rank
 
             df = pd.DataFrame(columns=["chain", "ins. code", "seq. code"] + features)
             parser = PDBParser(PERMISSIVE=0, QUIET=1)

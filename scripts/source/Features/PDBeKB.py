@@ -4,7 +4,7 @@ def get_funPDBe(resource, label, pdb_id, chain_id):
     url = f"https://www.ebi.ac.uk/pdbe/graph-api/pdb/funpdbe_annotation/{resource}/{pdb_id}"
     feature_vals = {}
     response = restAPI_get_json(url)
-    bug = False #todo remove when bug in PDBe-KB is corrected
+    bug = False #remove when bug in PDBe-KB is corrected
     for rec in response[pdb_id][0]["annotations"]:
         if rec["label"] == label:
             residues = rec["site_residues"]

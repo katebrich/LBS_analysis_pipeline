@@ -156,13 +156,6 @@ class AnalysisComputer():
             self.cohens_w.append((feature, cohens_w))
             self.cohens_w_means.append((feature, (np.mean(cohens_w), np.std(cohens_w))))
 
-        #todo
-        ##calculate effect sizes
-        #if (feature_type == "continuous"):
-        #    self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
-        #else:
-        #    self.cohens_w_vals.append((feature, self.cohens_w(data_binding, data_nonbinding)))
-
         #save difference of means and variance for summary
         if (feature_type == "continuous"):
             mean_binding = np.mean(data_binding)
@@ -248,7 +241,7 @@ class AnalysisComputer():
                                  os.path.join(feature_output_dir, f"{feature_name}_hist_bins_60"))
             Plots.plot_histogram(data_binding, data_nonbinding, 100,
                                  os.path.join(feature_output_dir, f"{feature_name}_hist_bins_100"))
-            Plots.plot_binding_nonbinding_ratios_continuous(data_binding, data_nonbinding, os.path.join(feature_output_dir, f"{feature_name}_ratios"), 20) #todo smazat
+            Plots.plot_binding_nonbinding_ratios_continuous(data_binding, data_nonbinding, os.path.join(feature_output_dir, f"{feature_name}_ratios"), 20)
 
         elif feature_type == "ordinal":
             Plots.plot_binding_nonbinding_ratios(data_binding, data_nonbinding,
@@ -420,26 +413,6 @@ class AnalysisComputer():
         return abs((u1 - u2) / s)
 
     def get_cohens_w(self, chi2, N):
-        '''sample_binding = [str(i) for i in sample_binding]  # fix for Counter
-        sample_nonbinding = [str(i) for i in sample_nonbinding]
-        binding_counts = Counter(sample_binding)
-        nonbinding_counts = Counter(sample_nonbinding)
-        keys1 = binding_counts.keys()
-        keys2 = nonbinding_counts.keys()
-        categories = list(set().union(keys1, keys2))
-        categories = sorted(categories)
-        binding = []
-        nonbinding = []
-        binding_counts_sorted = []
-        nonbinding_counts_sorted = []
-        for cat in categories:
-            binding.append(binding_counts[cat])
-            nonbinding.append(nonbinding_counts[cat])
-            binding_counts_sorted.append((cat, binding_counts[cat]))
-            nonbinding_counts_sorted.append((cat, nonbinding_counts[cat]))
-        obs = np.array([np.array(binding), np.array(nonbinding)])
-        chi2, p_value, dof, expected = stats.chi2_contingency(obs)
-        N = len(sample_binding) + len(sample_nonbinding)'''  #todo
         return math.sqrt(chi2/N)
 
 

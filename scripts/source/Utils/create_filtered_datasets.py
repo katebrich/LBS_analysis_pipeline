@@ -185,9 +185,9 @@ class DatasetLigandsFilter:
 #######################################################################
 
 filter="MOAD" #p2rank
-dataset_file=f"" #todo
-output_file= f"" #todo
-pdb_dir=f"" #todo
+dataset_file=f"" #TO EDIT
+output_file= f"" #TO EDIT
+pdb_dir=f"" #TO EDIT
 threads=4
 
 

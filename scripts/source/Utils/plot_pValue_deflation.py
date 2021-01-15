@@ -7,8 +7,8 @@ from scipy import stats
 
 iterations = 100
 
-feature = "exposure_CN" #todo
-data_path = "/home/katebrich/Documents/diplomka/P2Rank/datasets/holo4k_filter_p2rank/analysis_0" #todo
+feature = "" #TO EDIT
+data_path = "" #TO EDIT
 pairs_path = os.path.join(data_path, feature, "pairs.txt")
 pairs = np.genfromtxt(pairs_path, delimiter=' ', dtype=None, encoding=None)
 pairs = list(pairs)
