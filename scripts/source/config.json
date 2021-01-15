@@ -151,7 +151,22 @@
 			"import_path": "Features.OtherResources.CisPeptide",
 			"type": "binary",
 			"default": "0"
-		}
+		},
+		"lbs": {
+			"import_path": "Features.Test.LBS",
+			"type": "binary",
+			"default": "0"
+		},
+		"random_binary": {
+			"import_path": "Features.Test.RandomBinary",
+			"type": "binary",
+			"default": "0"
+		},
+		"random_cont": {
+			"import_path": "Features.Test.RandomCont",
+			"type": "continuous",
+			"default": "5"
+		},
 	}	
 
 }

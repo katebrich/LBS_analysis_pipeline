@@ -23,8 +23,10 @@ class AnalysisComputer():
     b_ratios = []
     p_values_means = []
     p_val_perc = []
-    cohens_d_vals = []
-    cohens_w_vals = []
+    cohens_d = []
+    cohens_d_means = []
+    cohens_w = []
+    cohens_w_means = []
     means = []
     errors = []
     features_list = []
@@ -69,6 +71,8 @@ class AnalysisComputer():
         feature_type = self.config.get_feature_type(feature) # binary/continuous/categorical/ordinal
         statistics = []
         p_values = []
+        cohens_d = []
+        cohens_w = []
 
         self.feature_dir = feature_dir
         self.feature = feature
@@ -120,13 +124,18 @@ class AnalysisComputer():
                 #run analysis and save results to file
                 if (feature_type == "continuous"):
                     res = self.welchs_t_test(sample_binding, sample_nonbinding, f)
+                    if res == None:
+                        self.errors.append(feature)
+                        return False
+                    cohens_d.append(self.get_cohens_d(sample_binding, sample_nonbinding))
                 elif (feature_type == "categorical" or feature_type == "ordinal" or feature_type == "binary"):
                     res = self.chi_squared_test(sample_binding, sample_nonbinding, f, feature)
+                    if res == None:
+                        self.errors.append(feature)
+                        return False
+                    cohens_w.append(self.get_cohens_w(res[0], len(sample_binding) + len(sample_nonbinding)))
                 else:
                     logger.error(f"Unknown type of feature '{feature_type}'. Please specify the type in config.")
-                    self.errors.append(feature)
-                    return False
-                if res == None:
                     self.errors.append(feature)
                     return False
 
@@ -139,13 +148,20 @@ class AnalysisComputer():
         #save values for summary
         self.p_values.append((feature, p_values))
         self.b_ratios.append((feature, len(data_binding) / (len(data_binding) + len(data_nonbinding))))
-        self.p_values_means.append((feature, np.mean(p_values)))
-
-        #calculate effect sizes
+        self.p_values_means.append((feature, (np.mean(p_values), np.std(p_values))))
         if (feature_type == "continuous"):
-            self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
+            self.cohens_d.append((feature, cohens_d))
+            self.cohens_d_means.append((feature, (np.mean(cohens_d), np.std(cohens_d))))
         else:
-            self.cohens_w_vals.append((feature, self.cohens_w(data_binding, data_nonbinding)))
+            self.cohens_w.append((feature, cohens_w))
+            self.cohens_w_means.append((feature, (np.mean(cohens_w), np.std(cohens_w))))
+
+        #todo
+        ##calculate effect sizes
+        #if (feature_type == "continuous"):
+        #    self.cohens_d_vals.append((feature, self.cohens_d(data_binding, data_nonbinding)))
+        #else:
+        #    self.cohens_w_vals.append((feature, self.cohens_w(data_binding, data_nonbinding)))
 
         #save difference of means and variance for summary
         if (feature_type == "continuous"):
@@ -232,6 +248,7 @@ class AnalysisComputer():
                                  os.path.join(feature_output_dir, f"{feature_name}_hist_bins_60"))
             Plots.plot_histogram(data_binding, data_nonbinding, 100,
                                  os.path.join(feature_output_dir, f"{feature_name}_hist_bins_100"))
+            Plots.plot_binding_nonbinding_ratios_continuous(data_binding, data_nonbinding, os.path.join(feature_output_dir, f"{feature_name}_ratios"), 20) #todo smazat
 
         elif feature_type == "ordinal":
             Plots.plot_binding_nonbinding_ratios(data_binding, data_nonbinding,
@@ -255,12 +272,43 @@ class AnalysisComputer():
 
         self.p_values_means.sort(key=lambda x: x[0])  # sort by name
         with open(os.path.join(self.output_dir, f"p_values_means.csv"), 'w') as f:
+            f.write(f"\"feature\",\"mean\",\"std_dev\"\n") # header
             for line in self.p_values_means:
                 f.write(f"{str(line[0])}, ")
-                f.write('{0:.4g}'.format(line[1]))
+                f.write(', '.join('{0:.4g}'.format(x) for x in line[1]))
                 f.write('\n')
 
-        self.cohens_d_vals.sort(key=lambda x: x[1], reverse=True)  # sort by value
+        self.cohens_d.sort(key=lambda x: x[0])  # sort by name
+        with open(os.path.join(self.output_dir, f"cohens_d.csv"), 'w') as f:
+            for line in self.cohens_d:
+                f.write(f"{str(line[0])}, ")
+                f.write(', '.join('{0:.4g}'.format(x) for x in line[1]))
+                f.write('\n')
+
+        self.cohens_d_means.sort(key=lambda x: x[0])  # sort by name
+        with open(os.path.join(self.output_dir, f"cohens_d_means.csv"), 'w') as f:
+            f.write(f"\"feature\",\"mean\",\"std_dev\"\n")  # header
+            for line in self.cohens_d_means:
+                f.write(f"{str(line[0])}, ")
+                f.write(', '.join('{0:.4g}'.format(x) for x in line[1]))
+                f.write('\n')
+
+        self.cohens_w.sort(key=lambda x: x[0])  # sort by name
+        with open(os.path.join(self.output_dir, f"cohens_w.csv"), 'w') as f:
+            for line in self.cohens_w:
+                f.write(f"{str(line[0])}, ")
+                f.write(', '.join('{0:.4g}'.format(x) for x in line[1]))
+                f.write('\n')
+
+        self.cohens_w_means.sort(key=lambda x: x[0])  # sort by name
+        with open(os.path.join(self.output_dir, f"cohens_w_means.csv"), 'w') as f:
+            f.write(f"\"feature\",\"mean\",\"std_dev\"\n")  # header
+            for line in self.cohens_w_means:
+                f.write(f"{str(line[0])}, ")
+                f.write(', '.join('{0:.4g}'.format(x) for x in line[1]))
+                f.write('\n')
+
+        '''self.cohens_d_vals.sort(key=lambda x: x[1], reverse=True)  # sort by value
         with open(os.path.join(self.output_dir, f"cohens_d.csv"), 'w') as f:
             for line in self.cohens_d_vals:
                 f.write(f"{str(line[0])}, ")
@@ -272,7 +320,7 @@ class AnalysisComputer():
             for line in self.cohens_w_vals:
                 f.write(f"{str(line[0])}, ")
                 f.write('{0:.4g}'.format(line[1]))
-                f.write('\n')
+                f.write('\n')'''
 
         self.b_ratios.sort(key=lambda x: x[0])  # sort by name
         with open(os.path.join(self.output_dir, f"binding_ratios.csv"), 'w') as f:
@@ -364,15 +412,15 @@ class AnalysisComputer():
 
         return (chi2, p_value)
 
-    def cohens_d(self, sample1, sample2):
+    def get_cohens_d(self, sample1, sample2):
         n1, n2 = len(sample1), len(sample2)
         s1, s2 = np.var(sample1, ddof=1), np.var(sample2, ddof=1)
         s = math.sqrt(((n1 - 1) * s1 + (n2 - 1) * s2) / (n1 + n2 - 2))
         u1, u2 = np.mean(sample1), np.mean(sample2)
         return abs((u1 - u2) / s)
 
-    def cohens_w(self, sample_binding, sample_nonbinding):
-        sample_binding = [str(i) for i in sample_binding]  # fix for Counter
+    def get_cohens_w(self, chi2, N):
+        '''sample_binding = [str(i) for i in sample_binding]  # fix for Counter
         sample_nonbinding = [str(i) for i in sample_nonbinding]
         binding_counts = Counter(sample_binding)
         nonbinding_counts = Counter(sample_nonbinding)
@@ -391,7 +439,7 @@ class AnalysisComputer():
             nonbinding_counts_sorted.append((cat, nonbinding_counts[cat]))
         obs = np.array([np.array(binding), np.array(nonbinding)])
         chi2, p_value, dof, expected = stats.chi2_contingency(obs)
-        N = len(sample_binding) + len(sample_nonbinding)
+        N = len(sample_binding) + len(sample_nonbinding)'''  #todo
         return math.sqrt(chi2/N)
 
 

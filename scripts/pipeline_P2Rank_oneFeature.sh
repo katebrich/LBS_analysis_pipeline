@@ -15,7 +15,7 @@ OPTIND=1 # Reset in case getopts has been used previously in the shell.
 loops=10
 threads=4
 config=${PYTHON_SCRIPTS_PATH}/config.json
-features_list="." #take all features in config by default
+features_list=""
 
 while getopts "t:e:f:l:m:c:" opt; do
 	case "$opt" in

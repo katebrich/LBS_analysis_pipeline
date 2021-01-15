@@ -88,6 +88,63 @@ def plot_binding_nonbinding_ratios(binding_data, nonbinding_data, output_file, s
     pyplot.clf()
     pyplot.close('all')
 
+def plot_binding_nonbinding_ratios_continuous(binding_data, nonbinding_data, output_file, bins): #todo smazat
+    pyplot.clf()
+    min_val = min(binding_data + nonbinding_data)
+    max_val = max(binding_data + nonbinding_data)
+    bins_ranges = np.linspace(min_val, max_val, num=bins+1)
+
+    x_labels = []
+    br_list = list(bins_ranges)
+    for i in range(0, bins):
+        x_labels.append(round((br_list[i] + br_list[i+1]) / 2, 2))
+
+    binding_counts = Counter(np.digitize(binding_data, bins_ranges))
+    nonbinding_counts = Counter(np.digitize(nonbinding_data, bins_ranges))
+    print()
+
+    ratios={}
+    for k in nonbinding_counts.keys():
+        if (k > bins):
+            continue
+        ratio = binding_counts[k] / nonbinding_counts[k]
+        ratios[k] = ratio
+
+    sorted_ratios = sorted(ratios.items(), key=operator.itemgetter(0))
+
+    barWidth = 0.45
+
+    # set height of bar
+    bars = [x[1] for x in sorted_ratios]
+    # Set position of bar on X axis
+    r1 = np.arange(len(bars))
+    r2 = [x + barWidth/2 for x in r1]
+
+    fig, ax = pyplot.subplots()
+    pyplot.bar(r2, bars, color='cornflowerblue', width=barWidth)
+    pyplot.gcf().subplots_adjust(bottom=0.15)
+    pyplot.xlabel('Mean of the bin', fontsize=13)
+    pyplot.ylabel('Binding/nonbinding ratio', fontsize=13)
+    # Add xticks in the middle of bars
+    pyplot.xticks([r + barWidth/2 for r in range(len(bars))], x_labels, rotation='vertical')
+
+    #Draw total binding/nonbinding ratio for comparison
+    ratio = len(binding_data) / len(nonbinding_data)
+    ax.axhline(y=ratio, color="red", linestyle='--' )
+
+    trans = transforms.blended_transform_factory(
+        ax.get_yticklabels()[0].get_transform(), ax.transData)
+    ax.text(0, ratio, "{:.3f}".format(ratio), color="red", transform=trans,
+            ha="right", va="center")
+    ax.set_ylim([0,0.55])
+    #round y axis labels to 3 places
+    ax.yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
+
+    #save figure and clear
+    pyplot.savefig(output_file)
+    pyplot.clf()
+    pyplot.close('all')
+
 
 def plot_histogram(binding_data, nonbinding_data, bins, output_file):
     pyplot.clf()
