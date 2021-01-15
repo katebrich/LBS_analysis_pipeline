@@ -1,19 +1,49 @@
 {
 	"features": {
-		"lbs": {
-			"import_path": "Features.Test.LBS",
-			"type": "binary",
-			"default": "0"
-		},
-		"random_binary": {
-			"import_path": "Features.Test.RandomBinary",
-			"type": "binary",
-			"default": "0"
-		},
-		"random_cont": {
-			"import_path": "Features.Test.RandomCont",
+		"HSE_up": {
+			"import_path": "Features.PDB.HSE_up",
 			"type": "continuous",
-			"default": "5"
+			"default": "5.5"
+		},
+		"HSE_down": {
+			"import_path": "Features.PDB.HSE_down",
+			"type": "continuous",
+			"default": "7.6"
+		},
+		"exposure_CN": {
+			"import_path": "Features.PDB.ExposureCN",
+			"type": "continuous",
+			"default": "8.05"
+		},
+		"bfactor": {
+			"import_path": "Features.PDB.BFactor",
+			"type": "continuous",
+			"default": "14.78"
+		},
+		"pdbekb_conservation": {
+			"import_path": "Features.PDBeKB.Conservation",
+			"type": "ordinal", 
+			"default": "1"
+		},
+		"dynamine": {
+			"import_path": "Features.PDBeKB.Dynamine",
+			"type": "continuous",
+			"default": "0.45"
+		},
+		"efoldmine": {
+			"import_path": "Features.PDBeKB.Efoldmine",
+			"type": "continuous",
+			"default": "0.09"
+		},
+		"depth": {
+			"import_path": "Features.PDBeKB.Depth",
+			"type": "continuous",
+			"default": "0.28"
+		},
+		"mobiDB": {
+			"import_path": "Features.OtherResources.MobiDB",
+			"type": "continuous",
+			"default": "0.086"
 		},
 		"PTM": {
 			"import_path": "Features.UniProt.PTM",
@@ -212,51 +242,6 @@
 			"type": "ordinal",
 			"default": "3"
 		},
-		"HSE_up": {
-			"import_path": "Features.PDB.HSE_up",
-			"type": "continuous",
-			"default": "5.5"
-		},
-		"HSE_down": {
-			"import_path": "Features.PDB.HSE_down",
-			"type": "continuous",
-			"default": "7.6"
-		},
-		"exposure_CN": {
-			"import_path": "Features.PDB.ExposureCN",
-			"type": "continuous",
-			"default": "8.05"
-		},
-		"bfactor": {
-			"import_path": "Features.PDB.BFactor",
-			"type": "continuous",
-			"default": "14.78"
-		},
-		"pdbekb_conservation": {
-			"import_path": "Features.PDBeKB.Conservation",
-			"type": "ordinal", 
-			"default": "1"
-		},
-		"dynamine": {
-			"import_path": "Features.PDBeKB.Dynamine",
-			"type": "continuous",
-			"default": "0.45"
-		},
-		"efoldmine": {
-			"import_path": "Features.PDBeKB.Efoldmine",
-			"type": "continuous",
-			"default": "0.09"
-		},
-		"depth": {
-			"import_path": "Features.PDBeKB.Depth",
-			"type": "continuous",
-			"default": "0.28"
-		},
-		"mobiDB": {
-			"import_path": "Features.OtherResources.MobiDB",
-			"type": "continuous",
-			"default": "0.086"
-		},
 		"phi_angle": {
 			"import_path": "Features.OtherResources.PhiAngle",
 			"type": "continuous",
@@ -276,6 +261,21 @@
 			"import_path": "Features.OtherResources.Conservation",
 			"type": "continuous",
 			"default": "0.65"
+		},
+		"lbs": {
+			"import_path": "Features.Test.LBS",
+			"type": "binary",
+			"default": "0"
+		},
+		"random_binary": {
+			"import_path": "Features.Test.RandomBinary",
+			"type": "binary",
+			"default": "0"
+		},
+		"random_cont": {
+			"import_path": "Features.Test.RandomCont",
+			"type": "continuous",
+			"default": "5"
 		}
 	}	
 
