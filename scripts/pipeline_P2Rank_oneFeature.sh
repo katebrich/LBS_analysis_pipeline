@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-P2RANK_PATH="/home/katebrich/Documents/diplomka/P2Rank" #todo edit !!!!!
+P2RANK_PATH="" #todo edit !!!!!
 PYTHON_SCRIPTS_PATH=scripts/source
 PYTHON="python3"
 
