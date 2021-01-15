@@ -117,6 +117,8 @@ output_path
     |   p_vals_perc.csv
     |   p_values.csv
     |   p_values_means.csv
+    |   cohens_d.csv
+    |   cohens_w.csv
     |
     └───feature1
     |       iterations.txt
@@ -248,7 +250,7 @@ where 'output/test' is the directory which contains subdirectories 'features' an
 <a name="four"></a>
 ## 4. Training a P2Rank model
 
-**P2Rank** (TODO - more info about the software) has an interface for **adding custom features** and training new models with these features. The way to do that is described in the [tutorial](https://github.com/cusbg/p2rank-framework/wiki/P2Rank-Custom-Feature).
+**P2Rank** is a ligand binding site prediction tool available at https://github.com/rdk/p2rank. It has an interface for **adding custom features** and training new models with these features. The way to do that is described in the [tutorial](https://github.com/cusbg/p2rank-framework/wiki/P2Rank-Custom-Feature).
 
 In this folder, you will find **two scripts that further extend the analysis pipeline** and allow you to automatically train P2Rank models with obtained data. The scripts first run the pipeline - download the data, compute ligand binding sites, features and analysis, as in previous sections. In addition, dataset files are converted to the format accepted by P2Rank, the .csv files with custom features are created using previously computed feature values, and **P2Rank model is trained and evaluated on given datasets with custom features**.
 
