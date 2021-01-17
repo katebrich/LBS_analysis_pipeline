@@ -166,7 +166,7 @@
 			"import_path": "Features.Test.RandomCont",
 			"type": "continuous",
 			"default": "5"
-		},
+		}
 	}	
 
 }
